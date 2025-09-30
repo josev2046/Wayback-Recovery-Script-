@@ -2,9 +2,12 @@
 
 In the event that both primary and backup servers fail, the Internet Archive’s Wayback Machine may contain the final accessible version of a digital collection. This script provides a systematic framework for interpreting that archived content not simply as a static website, but as a **compromised database**. Its primary objective is to **reconstruct the full structured metadata hierarchy** and to **retrieve all related media files** from the preserved HTML snapshots.
 
-Fig.1 shows the logical steps the script follows to recover the collection:
+Fig. 1 shows the logical steps the script follows to recover the collection:
 
 ![Logical steps for archive recovery](https://github.com/user-attachments/assets/99f349c9-1c6b-412b-9bcb-fe2ce76ce212)
+
+<p align="center">Fig. 1: Conceptual Sequence of Archive Data Recovery.</p>
+
 
 The script executes a two-pronged strategy to ensure maximum data retrieval and media accessibility:
 
