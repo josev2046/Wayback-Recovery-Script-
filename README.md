@@ -25,18 +25,18 @@ The script executes a two-pronged strategy to ensure maximum data retrieval and 
 * **Required Python Libraries:** `requests`, `beautifulsoup4`, `lxml`.
 * **Media Downloader:** The external tool **`yt-dlp`** must be installed and accessible in your system's PATH.
 
-
-
-
-# Wayback-Recovery-Script-
-Your primary and back-up servers failed? The Wayback Machine may still hold a snapshot of the archive? This script systematically treats archived HTML as a compromised database to reconstruct the full metadata tree and retrieve media files.
+### Instalation
 
 ```bash
-curl -X POST "<YOUR_NUCLEUS_BASE_URL>/api/entries.php" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "awardId=<YOUR_AWARD_ID>&entryId=<YOUR_ENTRY_ID>&expires=<GENERATED_EXPIRES_TIMESTAMP>&keyId=<YOUR_API_KEY_ID>&signature=<GENERATED_SIGNATURE>"
+git clone https://github.com/josevelazquez/archived-heritage-harvester.git
+cd archived-heritage-harvester
+pip install requests beautifulsoup4 lxml
 ```
 
-`HTML`
+### Configuration
+
+**The placeholders** in the `archival_harvester.py` script under the `--- Configuration Constants ---` section **must be edited** to point to your specific archived catalogue's URLs.
+
+
 
 
