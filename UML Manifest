@@ -1,0 +1,49 @@
+@startuml
+!theme mars
+skinparam style strict
+
+title Conceptual Sequence: Archive Data Recovery
+
+' Simplified Participants
+
+participant "Python Harvester" as Script
+participant "Wayback Index" as Index
+participant "Wayback Item Pages" as Items
+database "Local Storage" as FS
+
+autonumber
+
+activate Script
+Script -> Script: Start Script (python3)
+
+== 1. Discovery (Indexing) ==
+Script -> Index: Get Browse Index (BROWSE_URL)
+Index --> Script: Return List of Item URLs
+Script -> Script: Build Job Queue
+
+loop For each Item URL
+    == 2. Request Management ==
+    Script -> Script: Apply Delay (SLEEP_BETWEEN)
+
+    == 3. Data Extraction and Save ==
+    Script -> Items: Get Item HTML
+    Items --> Script: Return Page Content
+    
+    note right: Metadata Extracted (Dual Strategy)\nMedia Links Found
+    
+    Script -> FS: Save **Metadata (.json)**
+    
+    alt If Media Links Found
+        Script -> Script: **Clean URL** (Strip Wayback Prefix)
+        Script -> Items: Request Media File (Clean URL)
+        Items --> Script: Send Media Data
+        Script -> FS: Save **Media File**
+    else
+        Script -> Script: Log "No media found."
+    end
+end
+
+Script --> Script: Job Finished
+
+deactivate Script
+@enduml
