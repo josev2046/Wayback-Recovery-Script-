@@ -2,6 +2,7 @@ In the event that both primary and backup servers fail, the Internet Archive’s
 
 Fig.1 shows the logical steps the script follows to recover the collection:
 
+<img width="809" height="902" alt="image" src="https://github.com/user-attachments/assets/99f349c9-1c6b-412b-9bcb-fe2ce76ce212" />
 
 
 
