@@ -28,8 +28,8 @@ The script executes a two-pronged strategy to ensure maximum data retrieval and 
 ### Installation
 
 ```bash
-git clone https://github.com/josevelazquez/archived-heritage-harvester.git
-cd archived-heritage-harvester
+git clone https://github.com/josevelazquez/Wayback-Recovery-Script.git
+cd Wayback-Recovery-Script
 pip install requests beautifulsoup4 lxml
 ```
 
