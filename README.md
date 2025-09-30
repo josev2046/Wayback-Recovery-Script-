@@ -1,4 +1,6 @@
-## Recovery Workflow Logic
+## Recovering structured metadata and media from archived web catalogues
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17238372.svg)](https://doi.org/10.5281/zenodo.17238372)
 
 In the event that both primary and backup servers fail, the Internet Archive’s Wayback Machine may contain the final accessible version of a digital collection. This script provides a systematic framework for interpreting that archived content not simply as a static website, but as a **compromised database**. Its primary objective is to **reconstruct the full structured metadata hierarchy** and to **retrieve all related media files** from the preserved HTML snapshots.
 
